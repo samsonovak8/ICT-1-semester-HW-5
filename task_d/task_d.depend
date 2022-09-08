@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1662634441 source:/home/katya/git/task_d/main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+	<string>
+
