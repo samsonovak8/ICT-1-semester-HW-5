@@ -17,6 +17,16 @@ void calc(size_t n, size_t s, std::vector<int> a, std::vector<int> &dp, std::vec
     return;
 }
 
+void print_answer(int s, const std::vector<int>& dp, const std::vector<int>& pred) {
+    std::cout << dp[s] << std::endl;
+    while (s > 0) {
+        std::cout << pred[s];
+        s -= pred[s];
+        if (s)
+            std::cout << " ";
+    }
+}
+
 int main() {
     int *n = new int;
     std::cin >> *n;
@@ -33,13 +43,7 @@ int main() {
         std::cout << -1;
     }
     else {
-        std::cout << dp[s] << std::endl;
-        while (s > 0) {
-            std::cout << pred[s];
-            s -= pred[s];
-            if (s)
-                std::cout << " ";
-        }
+        print_answer(s, dp, pred);
     }
     delete n;
     n = nullptr;
