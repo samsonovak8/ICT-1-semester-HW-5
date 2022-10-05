@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1662388052 source:/home/katya/git/task_e/main.cpp
-	<iostream>
-	<math.h>
-	<string>
-
