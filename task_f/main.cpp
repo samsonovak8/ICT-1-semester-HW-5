@@ -22,11 +22,17 @@ char calc(int n, int m) {
 
 int main()
 {
-    int n, m;
+    int *n = new int;
+    int *m = new int;
 
-    std::cin >> n >> m;
+    std::cin >> *n >> *m;
 
-    std::cout << calc(n, m) << std::endl;
+    std::cout << calc(*n, *m) << std::endl;
+
+    delete n;
+    n = nullptr;
+    delete m;
+    m = nullptr;
 
     return 0;
 }
