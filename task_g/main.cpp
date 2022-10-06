@@ -25,12 +25,19 @@ long double calc(int n, int m) {
 
 int main()
 {
-    int n, m;
+    int *n = new int;
+    int *m = new int;
 
-    std::cin >> n >> m;
+    std::cin >> *n >> *m;
 
-    double ans = calc(n, m);
+    double ans = calc(*n, *m);
 
     std::cout << std::fixed << std::setprecision(9) << ans << std::endl;
+    
+    delete n;
+    n = nullptr;
+    delete m;
+    m = nullptr;
+
     return 0;
 }
