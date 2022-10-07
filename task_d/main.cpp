@@ -3,9 +3,9 @@
 #include <algorithm>
 #include <string>
 
-int calc(std::string s1, std::string s2, int n, int m) {
-    std::vector<std::vector<int> > dp(2, std::vector<int> (m + 1));
-    int ans=0;
+size_t find_lenth_common_substr(std::string s1, std::string s2, size_t n, size_t m) {
+    std::vector<std::vector<size_t> > dp(2, std::vector<size_t> (m + 1));
+    size_t max_length=0;
     for (size_t i = 1; i <= n; ++i) {
 
         for (size_t j = 1; j <= m; ++j) {
@@ -17,13 +17,13 @@ int calc(std::string s1, std::string s2, int n, int m) {
                 dp[i % 2][j] = 0;
             }
 
-            ans = std::max(ans, dp[i % 2][j]);
+            max_length = std::max(max_length, dp[i % 2][j]);
         }
     }
-    return ans;
+    return max_length;
 }
 
-std::string calc(std::string s1, std::string s2, int n, int m, int max_len) {
+std::string build_answer_string(std::string s1, std::string s2, int n, int m, int max_len) {
     std::string ans_string="";
     std::vector<std::vector<int> > dp(2, std::vector<int> (m + 1));
     for (size_t i = 1; i <= n; ++i) {
@@ -55,12 +55,12 @@ int main() {
 
     std::cin >> s1 >> s2;
 
-    int n = s1.length();
-    int m = s2.length();
+    size_t n = s1.length();
+    size_t m = s2.length();
 
-    int ans = calc(s1, s2, n, m);
+    size_t ans = find_lenth_common_substr(s1, s2, n, m);
 
-    std::cout << calc(s1, s2, n, m, ans) << std::endl;
+    std::cout << build_answer_string(s1, s2, n, m, ans) << std::endl;
 
     return 0;
 }
