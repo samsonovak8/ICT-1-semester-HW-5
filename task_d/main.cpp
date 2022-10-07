@@ -23,7 +23,7 @@ size_t find_lenth_common_substr(std::string s1, std::string s2, size_t n, size_t
     return max_length;
 }
 
-std::string build_answer_string(std::string s1, std::string s2, int n, int m, int max_len) {
+std::string build_answer_string(std::string s1, std::string s2, size_t n, size_t m, size_t max_len) {
     std::string ans_string="";
     std::vector<std::vector<int> > dp(2, std::vector<int> (m + 1));
     for (size_t i = 1; i <= n; ++i) {
