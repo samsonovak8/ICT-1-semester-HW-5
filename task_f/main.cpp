@@ -1,6 +1,6 @@
 #include <iostream>
 
-char calc(int n, int m) {
+char calc(size_t n, size_t m) {
     char ans;
     if (n == m) {
         ans = 'F';
@@ -22,7 +22,8 @@ char calc(int n, int m) {
 
 int main()
 {
-    int n, m;
+    size_t n = 0;
+    size_t m = 0;
 
     std::cin >> n >> m;
 
