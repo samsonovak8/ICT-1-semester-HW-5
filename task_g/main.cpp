@@ -2,7 +2,7 @@
 #include <vector>
 #include <iomanip>
 
-long double calc(int n, int m) {
+long double calc(size_t n, size_t m) {
 
     std::vector<std::vector<long double> > dp(n + 1, std::vector<long double> (m + 1, 0.0));
 
@@ -25,12 +25,14 @@ long double calc(int n, int m) {
 
 int main()
 {
-    int n, m;
+    size_t n = 0;
+    size_t m = 0;
 
     std::cin >> n >> m;
 
     double ans = calc(n, m);
 
     std::cout << std::fixed << std::setprecision(9) << ans << std::endl;
+
     return 0;
 }
